@@ -15,7 +15,8 @@
 
         $query="INSERT INTO `usuario`( `Nombre`, `Apellido`, `Usuario`, `Password`) VALUES ('$Nombre','$Apellido','$Usuario','$Password');";                
         $consulta=$con->query($query);
-        $con->close();						
+        $con->close();
+		header("Index.html");
 	?>
 </body>
 </html>

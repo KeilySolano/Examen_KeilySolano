@@ -5,33 +5,38 @@
 	<link rel="stylesheet" type="text/css" href="Estilos.css" />
 </head>
 <body>
-	<?php
-		$Server = "localhost";
-	    $Datebase = "usuario";
-	    $Usuario = "root";
-	    $Password = "";
-
-		$conexion = mysqli_connect($Server, $Usuario, $Password, $Datebase);	   
-		$consulta = mysqli_query($conexion, "SELECT FROM usuario");
-
-		echo '<table border="1"';
-		echo '<tr>';
-		echo '<th id="Nombre">Nombre</th>';
-		echo '<th id="Apellido">Apellido</th>';
-		echo '<th id="Usuario">Usuario</th>';
-		echo '<th id="Passsword">Passsword</th>';
-		echo '</tr>';
-
-		while($extraido = mysqli_fetch_array($consulta))
-		{
-			echo '<tr>';
-			echo '<td>'.$extraido['Nombre'].'</td>';
-			echo '<td>'.$extraido['Apellido'].'</td>';
-			echo '<td>'.$extraido['Usuario'].'</td>';
-			echo '<td>'.$extraido['Passsword'].'</td>';
-		}
-		mysqli_close($conexion);
-		echo '</table>';
-	?>
+	
+		<table align="center" border=1 bgcolor="#FFFFFF">
+                    <tr>
+                        <td bgcolor="#777777">
+                            <p>Precio</p>
+                        </td>
+                        <td bgcolor="#777777">
+                            <p>Producto</p>
+                        </td>
+                    </tr>
+                    <?php
+                         include('Conexion.php');
+                         $con = new Conexion();
+                        $query="SELECT * FROM `usuario` WHERE 1;";
+                        $pro=$con->query($query);
+                        $con->close();
+                        $total=0;
+                        
+                        while($row=mysqli_fetch_assoc($pro))
+                        {
+                            echo "
+                                <tr>
+                                    <td>
+                                        <p>".$row['Nombre']."</p>
+                                    </td>
+                                    <td>
+                                        <p>".$row['Apellido']."</p>
+                                    </td>
+                                </tr>
+                            ";
+                        }  
+                      ?>
+	
 </body>
 </html>
