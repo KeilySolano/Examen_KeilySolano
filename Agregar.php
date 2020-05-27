@@ -9,8 +9,9 @@
 		Nombre:<input type="text" name="txtNombre">;
 		Apellido:<input type="text" name="txtApellido">;
 		Usuario:<input type="text" name="txtUsuario">;
-		Contraseña:<input type="text" name="txtPassword">;
-		<input type="submit" value="formulario" name="Registrar">
+		Contraseña:<input type="text" name="txtPassword">;		
+        <input type="submit" value="Salir" name="continuar">		                
+     
 	</form>
 </body>
 </html>
