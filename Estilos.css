@@ -8,6 +8,7 @@ html, body {
     background-repeat: no-repeat;
     height: 100%;
     font-family: 'Numans', sans-serif;
+    color:white;
 }
 
 .container {
@@ -87,4 +88,7 @@ input:focus {
     }
 h1 {
     color:white;
+}
+form {
+    color: white;
 }
